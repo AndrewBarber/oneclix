@@ -195,8 +195,7 @@ sed -i -e "s/define( 'NONCE_SALT',       'put your unique phrase here' );/ /g" /
 curl -s https://api.wordpress.org/secret-key/1.1/salt/ >>  /home/$USER/web/$DOMAIN/public_html/wp-config.php
 echo "define('FS_METHOD', 'direct');" >> /home/$USER/web/$DOMAIN/public_html/wp-config.php
 echo "@ini_set( 'upload_max_filesize' , '2048M' );@ini_set( 'post_max_size', '2048M');@ini_set( 'memory_limit', '2048M' );@ini_set( 'max_execution_time', '3000' );@ini_set( 'max_input_time', '3000' );" >> /home/$USER/web/$DOMAIN/public_html/wp-config.php
-echo "require_once( ABSPATH . 'wp-settings.php' );" >> /home/$USER/web/$DOMAIN/public_html/wp-config.php
-
+echo "require_once ABSPATH . 'wp-settings.php';" >> /home/$USER/web/$DOMAIN/public_html/wp-config.php
 if [ $SSL = "YES" ]; then
     
     echo " "
